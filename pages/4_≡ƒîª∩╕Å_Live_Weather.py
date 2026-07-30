@@ -13,7 +13,11 @@ dark_mode = init_theme_state()
 with st.sidebar:
     theme_toggle_sidebar()
 load_css(dark_mode=st.session_state.dark_mode)
+from config import APP_NAME, OPENWEATHER_API_KEY
 
+st.write("API Loaded:", bool(OPENWEATHER_API_KEY))
+st.write("Key Length:", len(OPENWEATHER_API_KEY))
+st.write("First 5 characters:", OPENWEATHER_API_KEY[:5] if OPENWEATHER_API_KEY else "None")
 section_header("🌦️ Live Weather", "Pull real-time conditions to feed straight into your predictions")
 
 if not OPENWEATHER_API_KEY:
