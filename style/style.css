@@ -1,0 +1,190 @@
+/* ============================================================
+   Smart Crop System — Custom Theme
+   Palette: Green (#2E7D32) + White (#FAFAFA) + Brown (#6D4C41)
+   Style: Glassmorphism + Gradients, no default Streamlit look
+   ============================================================ */
+
+:root {
+    --primary-green: #2E7D32;
+    --light-green: #66BB6A;
+    --pale-green: #E8F5E9;
+    --brown: #6D4C41;
+    --tan: #D7CCC8;
+    --white: #FAFAFA;
+    --text-dark: #1B2B1E;
+    --danger: #C62828;
+    --warning: #F9A825;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --shadow-soft: 0 8px 32px rgba(46, 125, 50, 0.15);
+}
+
+/* ---- Global app background ---- */
+.stApp {
+    background: linear-gradient(160deg, #F1F8E9 0%, #E8F5E9 40%, #EFEBE9 100%);
+    font-family: 'Segoe UI', 'Poppins', sans-serif;
+    color: var(--text-dark);
+}
+
+/* Hide default Streamlit chrome for a cleaner, branded look */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header[data-testid="stHeader"] {background: rgba(0,0,0,0);}
+
+/* ---- Sidebar ---- */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%);
+    color: white;
+}
+section[data-testid="stSidebar"] * {
+    color: #F1F8E9 !important;
+}
+section[data-testid="stSidebar"] .stMarkdown h1,
+section[data-testid="stSidebar"] .stMarkdown h2,
+section[data-testid="stSidebar"] .stMarkdown h3 {
+    color: white !important;
+}
+
+/* ---- Glassmorphism card ---- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.2rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(46, 125, 50, 0.25);
+}
+
+/* ---- Hero / landing banner ---- */
+.hero-banner {
+    background: linear-gradient(120deg, rgba(46,125,50,0.92), rgba(109,76,65,0.88));
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-soft);
+    animation: fadeInUp 0.8s ease;
+}
+.hero-banner h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.hero-banner p {
+    font-size: 1.15rem;
+    opacity: 0.95;
+}
+
+/* ---- Feature card grid ---- */
+.feature-card {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-md);
+    padding: 1.3rem;
+    text-align: center;
+    border: 1px solid rgba(109,76,65,0.15);
+    transition: all 0.25s ease;
+    height: 100%;
+}
+.feature-card:hover {
+    background: rgba(255,255,255,0.85);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(46,125,50,0.2);
+}
+.feature-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+.feature-title { font-weight: 700; color: var(--primary-green); margin-bottom: 0.3rem; }
+.feature-desc { font-size: 0.88rem; color: #4E4E4E; }
+
+/* ---- Metric card ---- */
+.metric-card { text-align: center; }
+.metric-icon { font-size: 1.8rem; }
+.metric-label { font-size: 0.85rem; color: #5D4037; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.metric-value { font-size: 1.9rem; font-weight: 800; color: var(--primary-green); }
+.metric-delta { font-size: 0.8rem; color: var(--brown); }
+
+/* ---- Section headers ---- */
+.section-header h2 {
+    color: var(--primary-green);
+    font-weight: 800;
+    border-left: 6px solid var(--brown);
+    padding-left: 12px;
+    margin-bottom: 0.2rem;
+}
+.section-subtitle { color: #6D6D6D; margin-left: 18px; }
+
+/* ---- Risk badge ---- */
+.risk-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 999px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.4px;
+}
+
+/* ---- Buttons ---- */
+.stButton > button {
+    background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.6rem 1.4rem;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(46,125,50,0.35);
+    transition: all 0.2s ease;
+}
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(46,125,50,0.45);
+    filter: brightness(1.05);
+}
+
+/* ---- Download buttons ---- */
+.stDownloadButton > button {
+    background: linear-gradient(135deg, var(--brown), #8D6E63);
+    color: white;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+}
+
+/* ---- Tabs ---- */
+button[data-baseweb="tab"] {
+    font-weight: 700;
+    color: var(--brown);
+}
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--primary-green);
+    border-bottom: 3px solid var(--primary-green);
+}
+
+/* ---- Inputs ---- */
+.stTextInput input, .stNumberInput input, .stSelectbox div[data-baseweb="select"] {
+    border-radius: 10px !important;
+}
+
+/* ---- Animations ---- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp 0.6s ease; }
+
+/* ---- Footer ---- */
+.app-footer {
+    text-align: center;
+    color: #6D4C41;
+    font-size: 0.85rem;
+    padding: 1.2rem 0;
+    opacity: 0.85;
+}
